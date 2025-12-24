@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Christmas Greeting</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #7a0000;
+}
+
+/* PAGE 1 */
+#welcome-page {
+    position: fixed;
+    inset: 0;
+    background: #7a0000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: gold;
+    z-index: 10;
+    font-family: monospace;
+}
+
+#welcome-page h1 {
+    font-size: 45px;
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px gold; }
+    50% { text-shadow: 0 0 25px yellow; }
+    100% { text-shadow: 0 0 10px gold; }
+}
+
+#start-btn {
+    padding: 15px 35px;
+    font-size: 20px;
+    background: gold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div id="welcome-page">
+    <h1>🎄 Merry Christmas 🎄</h1>
+    <button id="start-btn">Click Here</button>
+</div>
+
+<script>
+document.getElementById("start-btn").onclick = () => {
+    // tandai bahwa user sudah klik
+    sessionStorage.setItem("playMusic", "yes");
+
+    // pindah ke page pohon
+    window.location.href = "tree.html";
+};
+</script>
+
+
+</body>
+</html>
